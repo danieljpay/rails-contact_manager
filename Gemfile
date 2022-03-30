@@ -64,3 +64,5 @@ group :development do
   # gem "spring"
 end
 
+# Faker to generate fake data
+gem 'faker', '~> 2.20'
