@@ -21,6 +21,16 @@ group_count = group_ids.length
 number_of_contacts = 20
 contacts = []
 
+my_contact = {
+    name: "Daniel J. Pérez",
+    email: "plupyt_dany@hotmail.com",
+    company: "UADY",
+    phone: Faker::PhoneNumber.cell_phone,
+    address: "#{Faker::Address.street_address} #{Faker::Address.zip} #{Faker::Address.city}",
+    group_id: group_ids[group_count-1] #last group
+}
+contacts.push(my_contact)
+
 number_of_contacts.times do |i|
     new_contact = {
         name: Faker::Name.name,
