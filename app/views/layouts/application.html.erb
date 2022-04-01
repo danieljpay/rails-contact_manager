@@ -6,11 +6,27 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>  
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    
+    <!-- navbar -->
+    <%= render 'layouts/navbar' %>
+
+    <!-- content -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <%= render 'layouts/sidebar' %>
+        </div><!-- /.col-md-3 -->
+
+        <div class="col-md-9">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+
   </body>
 </html>
