@@ -70,5 +70,8 @@ gem 'faker', '~> 2.20'
 # Bootstrap
 gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
 
-#jQuery
+# jQuery
 gem 'jquery-rails'
+
+# Pagination
+gem 'kaminari', '~> 1.2', '>= 1.2.2'
