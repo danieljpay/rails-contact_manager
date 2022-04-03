@@ -6,5 +6,5 @@ Rails.application.routes.draw do
 
   root 'contacts#index' # To specify the homepage
 
-  get 'contacts/index' # to redirect contacts controller at index method
+  get 'contacts/index', as: 'contacts' # to redirect contacts controller at index method
 end
