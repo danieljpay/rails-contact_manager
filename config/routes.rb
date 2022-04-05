@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   root 'contacts#index' # To specify the homepage
-
+  
   get 'contacts/index', as: 'contacts' # to redirect contacts controller at index method
-
+  
   get 'contacts/new', as: 'new_contact' # to redirect to new contacts page
-
+  
+  post '/contacts/create', to: 'contacts#create'
 end
