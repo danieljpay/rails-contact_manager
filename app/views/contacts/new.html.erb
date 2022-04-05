@@ -3,12 +3,30 @@
         <strong>Add Contact</strong>
     </div>    
 
-    <form action="/contacts/create" method="post">
+    <form action="/contacts/create" method="post" data-turbo="false">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
         <div class="panel-body">
+
+            <% if @contact.errors.any? %>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="alert alert-danger">
+                            <h3>Please correct this following errors:</h3>
+
+                            <ul>
+                                <% @contact.errors.full_messages.each do |message| %>
+                                    <li><%= message %></li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
+
             <div class="form-horizontal">
                 <div class="row">
                     <div class="col-md-8">
+
                         <div class="form-group">
                             <label for="name" class="control-label col-md-3">Name</label>
                             <div class="col-md-8">
@@ -77,7 +95,7 @@
                     <div class="col-md-4">
                         <div class="fileinput fileinput-new" data-provides="fileinput">
                             <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;">
-                                <img src="http://placehold.it/150x150" alt="Photo">
+                                <img src="http://placehold.co/150x150" alt="Photo">
                             </div>
                             <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>
                             <div class="text-center">
