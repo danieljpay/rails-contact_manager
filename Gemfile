@@ -75,3 +75,9 @@ gem 'jquery-rails'
 
 # Pagination
 gem 'kaminari', '~> 1.2', '>= 1.2.2'
+
+# Manage files
+gem 'paperclip', '~> 6.1'
+
+# jasny-bootstrap
+gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
