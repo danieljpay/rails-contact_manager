@@ -3,12 +3,6 @@
     <div class="media">
         <div class="media-left">
             <a href="#">
-                <%
-=begin%>
- Other way to show gravatar instead of a default image seted in contact model
- <%= image_tag contact.avatar.present? ? contact.avatar.url(:thumb) : contact.gravatar, class: "media-object", style: "width:100px; height:100px" %> 
-<%
-=end%>
                 <%= image_tag contact.avatar.url(:thumb), class: "media-object", style: "width:100px; height:100px" %>
             </a>
         </div>
@@ -26,9 +20,9 @@
         <%= link_to edit_contact_path(contact), class: "btn btn-circle btn-default btn-xs", title: "Edit" do %>
             <i class="glyphicon glyphicon-edit"></i>
         <% end %>
-        <a href="#" class="btn btn-circle btn-danger btn-xs" title="Edit">
+        <%= link_to destroy_contact_path(contact), method: :delete, class: "btn btn-circle btn-danger btn-xs", title: "Delete", data: { confirm: "Are you sure?"} do %>
             <i class="glyphicon glyphicon-remove"></i>
-        </a>
+        <% end %>
     </div>
     </td>
 </tr>
