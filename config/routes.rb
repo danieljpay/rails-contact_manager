@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   # delete 'contacts/:id/destroy', to: 'contacts#destroy', as: 'destroy_contact'
 
   # resurces :entity create all the above routes for the entity setted
-  resources :contacts, except: [:show] # This except avoid to add the route for contact show
+  resources :contacts, except: [:show] do # This except avoid to add the route for contact show
+    get 'autocomplete', on: :collection
+  end
 
 end
