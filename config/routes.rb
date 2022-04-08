@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   # patch 'contacts/:id/update', to: 'contacts#update', as: 'update_contact'
   # delete 'contacts/:id/destroy', to: 'contacts#destroy', as: 'destroy_contact'
 
+  # resurces :entity create all the above routes for the entity setted
   resources :contacts, except: [:show] # This except avoid to add the route for contact show
 
 end
