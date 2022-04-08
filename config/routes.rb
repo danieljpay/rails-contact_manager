@@ -6,11 +6,13 @@ Rails.application.routes.draw do
 
   root 'contacts#index' # To specify the homepage
   
-  get 'contacts/index', as: 'contacts' # to redirect contacts controller at index method
-  get 'contacts/new', as: 'new_contact' # to redirect to new contacts page
-  post 'contacts/create', to: 'contacts#create', as: 'create_contact'
-  get 'contacts/:id/edit', to: 'contacts#edit', as: 'edit_contact'
-  patch 'contacts/:id/update', to: 'contacts#update', as: 'update_contact'
-  delete 'contacts/:id/destroy', to: 'contacts#destroy', as: 'destroy_contact'
+  # get 'contacts/index', as: 'contacts' # to redirect contacts controller at index method
+  # get 'contacts/new', as: 'new_contact' # to redirect to new contacts page
+  # post 'contacts/create', to: 'contacts#create', as: 'create_contact'
+  # get 'contacts/:id/edit', to: 'contacts#edit', as: 'edit_contact'
+  # patch 'contacts/:id/update', to: 'contacts#update', as: 'update_contact'
+  # delete 'contacts/:id/destroy', to: 'contacts#destroy', as: 'destroy_contact'
+
+  resources :contacts, except: [:show] # This except avoid to add the route for contact show
 
 end
