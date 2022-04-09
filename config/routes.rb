@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
+  get 'dashboard/index'
+  get 'home/index'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'contacts#index' # To specify the homepage
+  root 'home#index' # To specify the homepage
   
   # get 'contacts/index', as: 'contacts' # to redirect contacts controller at index method
   # get 'contacts/new', as: 'new_contact' # to redirect to new contacts page
@@ -20,5 +22,7 @@ Rails.application.routes.draw do
   end
 
   post '/groups', to: 'groups#create'
+
+  get '/dashboard', to: 'dashboard#index'
 
 end
