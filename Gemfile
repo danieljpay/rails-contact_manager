@@ -84,3 +84,6 @@ gem 'jasny-bootstrap-rails', '~> 3.1', '>= 3.1.3'
 
 # jquery-ui
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
+
+# Authentication
+gem 'devise', '~> 4.8', '>= 4.8.1'
