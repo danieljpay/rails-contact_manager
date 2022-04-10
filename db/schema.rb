@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_04_09_000219) do
+ActiveRecord::Schema[7.0].define(version: 2022_04_09_220003) do
   create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "company"
@@ -22,15 +22,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_000219) do
     t.datetime "updated_at", null: false
     t.string "avatar_file_name"
     t.string "avatar_content_type"
-    t.bigint "avatar_file_size"
+    t.integer "avatar_file_size"
     t.datetime "avatar_updated_at"
+    t.integer "user_id"
     t.index ["group_id"], name: "index_contacts_on_group_id"
+    t.index ["user_id"], name: "index_contacts_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_groups_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -47,4 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_04_09_000219) do
   end
 
   add_foreign_key "contacts", "groups"
+  add_foreign_key "contacts", "users"
+  add_foreign_key "groups", "users"
 end
