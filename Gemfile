@@ -87,3 +87,6 @@ gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
 # Authentication
 gem 'devise', '~> 4.8', '>= 4.8.1'
+
+# Authorization
+gem 'pundit', '~> 2.2'
