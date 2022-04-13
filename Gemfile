@@ -90,3 +90,6 @@ gem 'devise', '~> 4.8', '>= 4.8.1'
 
 # Authorization
 gem 'pundit', '~> 2.2'
+
+# Notifications
+gem 'toastr-rails', '~> 1.0', '>= 1.0.3'

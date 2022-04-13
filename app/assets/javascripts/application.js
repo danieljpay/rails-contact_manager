@@ -1,8 +1,9 @@
 //= require jquery
-//= require jquery_ujs
-//= require jquery-ui
 //= require bootstrap-sprockets
 //= require jasny-bootstrap.min
+//= require jquery_ujs
+//= require jquery-ui
+//= require toastr
 //= require_tree .
 
 $(function() {
