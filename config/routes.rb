@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   # resurces :entity create all the above routes for the entity setted
   resources :contacts, except: [:show] do # This except avoid to add the route for contact show
     get 'autocomplete', on: :collection
+    get 'delete', on: :member
   end
 
   post '/groups', to: 'groups#create'

@@ -1,6 +1,6 @@
 class ContactsController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_contact, only: [:edit, :update, :destroy]
+  before_action :find_contact, only: [:edit, :update, :destroy, :delete]
   # before_action :all_contacts, only: [:index, :create]
 
   def index
@@ -73,6 +73,12 @@ class ContactsController < ApplicationController
         redirect_to contacts_path
       end
       format.js { @contacts = all_contacts(previous_query_string) }
+    end
+  end
+
+  def delete
+    respond_to do |format|
+      format.js
     end
   end
 

@@ -1,2 +1,6 @@
 <%= render 'table' %>
-toastr['success']('Contact was succesfully deleted.', 'SUCCESS');
+$('#confirm-modal').modal('hide');
+$('#confirm-modal').off('hidden.bs.modal');
+$('#confirm-modal').on('hidden.bs.modal', function(e) {
+    toastr['success']('Contact was successfully deleted.', 'SUCCESS');
+});
