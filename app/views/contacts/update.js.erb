@@ -1,0 +1,4 @@
+$('#contact-<%= @contact.id %>').replaceWith('<%= j( render(@contact) ) %>');
+<%= render 'table' %>
+$('#form-modal').modal('hide');
+toastr['success']('Contact was successfully updated.', 'SUCCESS');

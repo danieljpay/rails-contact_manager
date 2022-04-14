@@ -1,0 +1,7 @@
+$('#form-modal-body').html('<%= j render ("form"), ajax_form: true %>');
+$('#form-modal').modal('show');
+$('#form-modal-save-btn').off('click');
+$('#form-modal-save-btn').click(function() {
+    $('#form-modal-body').find('form').submit();
+});
+$('#add-new-group').hide();
